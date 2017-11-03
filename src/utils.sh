@@ -2,10 +2,12 @@
 # Utilities installation functions for devtools script
 #
 
+# Update sources
 function update_sources() {
-  apt-get update &> /dev/null & spinner "Updating Sources.."
+  apt-get update &> /dev/null & spinner "Updating Sources "
 }
 
+# Install utilities commands
 function install_utils() {
   local utils=('vim'
                'links'
@@ -27,6 +29,6 @@ function install_utils() {
                'lib32z1'
                'libbz2-1.0:i386'
               )
-  apt-get -y install "${utils[@]/#/}" &> /dev/null & spinner "Installing Utilities.."
+  apt-get -y install "${utils[@]/#/}" &> /dev/null & spinner "Installing Utilities "
   ln -s /usr/bin/nodejs /usr/bin/node &> /dev/null
 }

@@ -5,10 +5,9 @@
 #
 
 # load src
-chmod +x src/helper.sh
-chmod +x src/utils.sh
 . ./src/helper.sh
 . ./src/utils.sh
+. ./src/web-tools.sh
 
 # check if run in sudo permissions
 check_sudo
@@ -109,13 +108,27 @@ case $param in
 esac
 done
 
+# check if there were false commands or options
 if [[ $error_unknown_command -gt 0 ]] ; then
   printf "\n%s\n\n" "${error_unknown_command_msg}"
   exit
 fi
 
-# echo "command_install_utils = ${command_install_utils}"
-# echo "command_install_web_tools = ${command_install_web_tools}"
-# echo "command_install_db = ${command_install_db}"
-# echo "command_install_mobile_tools = ${command_install_mobile_tools}"
-# echo "option_web_server = ${option_web_server}"
+# display intro
+intro
+
+# update sources
+update_sources
+
+# check install utils command
+if [[ $command_install_utils -gt 0 ]] ; then
+  install_utils
+fi
+
+# check install utils command
+if [[ $command_install_web_tools -gt 0 ]] ; then
+  install_web_tools
+fi
+
+# display outro
+outro
