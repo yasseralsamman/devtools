@@ -38,9 +38,11 @@ EOF
 # Display introduction when running the script
 function intro() {
 cat <<EOF
+
   DevTools - Smart Bash Scripts For Web & Mobile Development Tools
   Version 1.0 for Ubuntu 14.04
   Contribute at https://github.com/yasseralsamman/devtools
+  
 EOF
 }
 
@@ -60,7 +62,7 @@ function check_sudo() {
 # Display spinner while installaion is in progress
 function spinner() {
   local pid=$!
-  local delay=0.25
+  local delay=0.45
   local spinstr='|/-\'
   printf "%s" "$1"
   while [ "$(ps a | awk '{print $1}' | grep $pid)" ]; do
@@ -71,5 +73,5 @@ function spinner() {
     printf "\b\b\b\b\b\b"
   done
   printf "    \b\b\b\b"
-  printf "\t\t\t%s\n" " =============  Done."
+  printf "\t\t\t\t%s\n" " =============  Done."
 }

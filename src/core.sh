@@ -114,6 +114,12 @@ if [[ $error_unknown_command -gt 0 ]] ; then
   exit
 fi
 
+# check --web-server option for any value other than apache2, this is temporary
+if [[ "$option_web_server" != "apache2" ]] ; then
+  printf "\n%s\n\n" "Error: --web-server option only supports apache2 ( More will be added ). Aborting."
+  exit
+fi
+
 # display intro
 intro
 
@@ -125,7 +131,7 @@ if [[ $command_install_utils -gt 0 ]] ; then
   install_utils
 fi
 
-# check install utils command
+# check install web tools command
 if [[ $command_install_web_tools -gt 0 ]] ; then
   install_web_tools
 fi
