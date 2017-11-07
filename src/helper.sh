@@ -23,13 +23,11 @@ cat <<EOF
       db                             Installs database server
       mobile-tools                   Installs mobile development tools and libraries
       all-default                    Installs all the tools with default options
-      all-custom                     Installs all the tools with custom options
 
     Options:
       --web-server=NAME              Specify web server to install [default: "apache2"]
       --php-version=VERSION          Specify php version to install [default: "5.6"]
       --db-server                    SPecify database server to install [default: "mysql"]
-      --db-user=USERNAME             Specify database root user name [default: "root"]
       --db-pass=PASSWORD             Specify database root user password [default: "123456"]
 
 EOF
@@ -42,7 +40,7 @@ cat <<EOF
   DevTools - Smart Bash Scripts For Web & Mobile Development Tools
   Version 1.0 for Ubuntu 14.04
   Contribute at https://github.com/yasseralsamman/devtools
-  
+
 EOF
 }
 

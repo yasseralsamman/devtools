@@ -8,6 +8,7 @@
 . ./src/helper.sh
 . ./src/utils.sh
 . ./src/web-tools.sh
+. ./src/db.sh
 
 # check if run in sudo permissions
 check_sudo
@@ -65,13 +66,6 @@ case $param in
       option_db_pass=123456
       break
     ;;
-    "all-custom")
-      command_install_utils=1
-      command_install_web_tools=1
-      command_install_db=1
-      command_install_mobile_tools=1
-      shift # past argument=value
-    ;;
     --web-server=*)
       option_web_server="${param#*=}"
       shift # past argument=value
@@ -82,18 +76,6 @@ case $param in
     ;;
     --db-server=*)
       option_db_server="${param#*=}"
-      shift # past argument=value
-    ;;
-    --db-user=*)
-      option_db_user="${param#*=}"
-      shift # past argument=value
-    ;;
-    --db-pass=*)
-      option_db_pass="${param#*=}"
-      shift # past argument=value
-    ;;
-    --set-alias=*)
-      option_db_pass="${param#*=}"
       shift # past argument=value
     ;;
     --db-pass=*)
@@ -114,11 +96,20 @@ if [[ $error_unknown_command -gt 0 ]] ; then
   exit
 fi
 
+
+#### Temporary Checks , the checks will be removed when more softwares are added
 # check --web-server option for any value other than apache2, this is temporary
 if [[ "$option_web_server" != "apache2" ]] ; then
   printf "\n%s\n\n" "Error: --web-server option only supports apache2 ( More will be added ). Aborting."
   exit
 fi
+
+# check --web-server option for any value other than apache2, this is temporary
+if [[ "$option_db_server" != "mysql" ]] ; then
+  printf "\n%s\n\n" "Error: --db-server option only supports mysql ( More will be added ). Aborting."
+  exit
+fi
+###########
 
 # display intro
 intro
@@ -134,6 +125,11 @@ fi
 # check install web tools command
 if [[ $command_install_web_tools -gt 0 ]] ; then
   install_web_tools
+fi
+
+# check install database command
+if [[ $command_install_db -gt 0 ]] ; then
+  install_database
 fi
 
 # display outro
