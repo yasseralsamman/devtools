@@ -21,13 +21,12 @@ cat <<EOF
       utils                          Installs basic dev utilities
       web-tools                      Installs web server and web tools
       db                             Installs database server
-      mobile-tools                   Installs mobile development tools and libraries
       all-default                    Installs all the tools with default options
 
     Options:
       --web-server=NAME              Specify web server to install [default: "apache2"]
       --php-version=VERSION          Specify php version to install [default: "5.6"]
-      --db-server                    SPecify database server to install [default: "mysql"]
+      --db-server                    Specify database server to install [default: "mysql"]
       --db-pass=PASSWORD             Specify database root user password [default: "123456"]
 
 EOF

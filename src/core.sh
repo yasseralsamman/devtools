@@ -29,6 +29,11 @@ option_db_pass=123456
 error_unknown_command=0
 error_unknown_command_msg=""
 
+# check if no params are passed
+if [[ $# -lt 1 ]]; then
+  show_help
+  exit
+fi
 
 # parse parameters
 for param in "$@"
@@ -110,6 +115,12 @@ if [[ "$option_db_server" != "mysql" ]] ; then
   exit
 fi
 ###########
+
+# check install utils command
+if [[ $command_show_help -gt 0 ]] ; then
+  show_help
+  exit
+fi
 
 # display intro
 intro
