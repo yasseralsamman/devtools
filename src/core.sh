@@ -9,6 +9,7 @@
 . ./src/utils.sh
 . ./src/web-tools.sh
 . ./src/db.sh
+. ./src/tools.sh
 
 # check if run in sudo permissions
 check_sudo
@@ -18,6 +19,8 @@ command_show_help=0;
 command_install_utils=0
 command_install_web_tools=0
 command_install_db=0
+command_install_chrome=0
+command_install_atom=0
 command_install_mobile_tools=0
 option_web_server=apache2
 option_php_version=5.6
@@ -69,6 +72,14 @@ case $param in
       option_db_server=mysql
       option_db_user=root
       option_db_pass=123456
+      break
+    ;;
+    "chrome")
+      command_install_chrome=1
+      break
+    ;;
+    "atom")
+      command_install_atom=1
       break
     ;;
     --web-server=*)
@@ -141,6 +152,16 @@ fi
 # check install database command
 if [[ $command_install_db -gt 0 ]] ; then
   install_database
+fi
+
+#check install chrome command
+if [[ $command_install_chrome -gt 0 ]] ; then
+  install_chrome
+fi
+
+#check install atom command
+if [[ $command_install_atom -gt 0 ]] ; then
+  install_atom
 fi
 
 # display outro

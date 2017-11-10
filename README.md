@@ -70,5 +70,20 @@ $ sudo bash devtools.sh db --db-server=mysql
 ```sh
 $ sudo bash devtools.sh db --db-pass=123456
 ```
+##### 5- Optional Software installation
+The following commands are not included in default installation and you have to mention the command to install the software. Note that you can use multiple optional commands in one call.
+
+###### Google Chrome
+To install Google Chrome use the following command
+```sh
+$ sudo bash devtools.sh chrome
+```
+
+###### Atom Editor
+To install Atom use the following command
+```sh
+$ sudo bash devtools.sh atom
+```
+
 ### Contribution
-Every OS version will have it's own branch as the commands and installtion instructions may differ from one to another, and it's easier for people to lcate their version from branch selection. Just remember to edit the readme to match your script.
+Every OS version will have it's own branch as the commands and installation instructions may differ from one to another, and it's easier for people to lcate their version from branch selection. Just remember to edit the readme to match your script.
