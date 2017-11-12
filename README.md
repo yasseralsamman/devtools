@@ -38,6 +38,11 @@ To install utilities use the command:
 ```sh
 $ sudo bash devtools.sh utils
 ```
+###### Available Options
+- You can choose what JDK version you want to install (6,7 and 8 are supported. JDK8 is default):
+```sh
+$ sudo bash devtools.sh utils --jdk-version=8
+```
 
 ##### 3- Web Development Tools
 #

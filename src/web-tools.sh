@@ -5,6 +5,7 @@
 # Install web tools
 function install_web_tools() {
   add-apt-repository ppa:ondrej/php -y &> /dev/null & spinner "Adding PPA for PHP "
+  update_sources
   local web_tools=( "apache2"
                     "php${option_php_version}"
                     "php-pear"
