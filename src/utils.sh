@@ -37,5 +37,7 @@ function install_java() {
   local jversion="oracle-java${option_jdk_version}-installer"
   apt-add-repository ppa:webupd8team/java -y &> /dev/null & spinner "Adding PPA for JDK "
   update_sources
+  echo debconf shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections
+  echo debconf shared/accepted-oracle-license-v1-1 seen true | sudo debconf-set-selections
   apt-get -y install "${jversion}" &> /dev/null & spinner "Installing JDK${option_jdk_version}"
 }
