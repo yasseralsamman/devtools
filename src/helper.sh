@@ -23,11 +23,18 @@ cat <<EOF
       db                             Installs database server
       all-default                    Installs all the tools with default options
 
+    Optional Commands:
+      chrome                         Installs the latest version of Google Chrome
+      atom                           Installs the latest version of Atom Editor
+
     Options:
       --web-server=NAME              Specify web server to install [default: "apache2"]
       --php-version=VERSION          Specify php version to install [default: "5.6"]
-      --db-server                    Specify database server to install [default: "mysql"]
+      --db-server=NAME               Specify database server to install [default: "mysql"]
       --db-pass=PASSWORD             Specify database root user password [default: "123456"]
+      --jdk-version=VERSION          Specify JSDK version to install [default: "8"]
+      --nodejs-version=VERSION       Specify NodeJS version to install [default: "6"]
+
 
 EOF
 }
