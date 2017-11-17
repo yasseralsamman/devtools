@@ -19,9 +19,6 @@ function install_utils() {
                'p7zip-full'
                'unzip'
                'zip'
-               'nodejs'
-               'node-less'
-               'npm'
                'libc6:i386'
                'libncurses5:i386'
                'libstdc++6:i386'
@@ -31,6 +28,13 @@ function install_utils() {
   apt-get -y install "${utils[@]/#/}" &> /dev/null & spinner "Installing Utilities "
   ln -s /usr/bin/nodejs /usr/bin/node &> /dev/null
   install_java
+  install_nodejs
+}
+
+function install_nodejs() {
+  local njsversion=$option_nodejs_version
+  curl -sL "https://deb.nodesource.com/setup_${option_nodejs_version}.x" | sudo -E bash - &> /dev/null & spinner "Adding PPA for NodeJS "
+  apt-get install nodejs &> /dev/null & spinner "Installing NodeJS${option_nodejs_version}"
 }
 
 function install_java() {

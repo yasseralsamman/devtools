@@ -43,6 +43,10 @@ $ sudo bash devtools.sh utils
 ```sh
 $ sudo bash devtools.sh utils --jdk-version=8
 ```
+- You can choose what NodeJS version you want to install (6,7 and 4 are supported. NodeJS 6 is default):
+```sh
+$ sudo bash devtools.sh utils --nodejs-version=6
+```
 
 ##### 3- Web Development Tools
 #

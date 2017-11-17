@@ -28,6 +28,7 @@ option_db_server=mysql
 option_db_user=root
 option_db_pass=123456
 option_jdk_version=8
+option_nodejs_version=6
 
 # control variables
 error_unknown_command=0
@@ -101,6 +102,10 @@ case $param in
     ;;
     --jdk-version=*)
       option_jdk_version="${param#*=}"
+      shift # past argument=value
+    ;;
+    --nodejs-version=*)
+      option_nodejs_version="${param#*=}"
       shift # past argument=value
     ;;
     *)
