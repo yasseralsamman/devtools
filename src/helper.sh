@@ -21,9 +21,7 @@ cat <<EOF
       utils                          Installs basic dev utilities
       web-tools                      Installs web server and web tools
       db                             Installs database server
-      all-default                    Installs all the tools with default options
-
-    Optional Commands:
+      ionic                          Installs Ionic Framework globally
       chrome                         Installs the latest version of Google Chrome
       atom                           Installs the latest version of Atom Editor
 

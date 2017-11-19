@@ -10,6 +10,7 @@
 . ./src/web-tools.sh
 . ./src/db.sh
 . ./src/tools.sh
+. ./src/mobile.sh
 
 # check if run in sudo permissions
 check_sudo
@@ -21,7 +22,7 @@ command_install_web_tools=0
 command_install_db=0
 command_install_chrome=0
 command_install_atom=0
-command_install_mobile_tools=0
+command_install_ionic=0
 option_web_server=apache2
 option_php_version=5.6
 option_db_server=mysql
@@ -61,20 +62,8 @@ case $param in
       shift # past argument with no value
     ;;
     "mobile-tools")
-      command_install_mobile_tools=1
+      command_install_ionic=1
       shift # past argument with no value
-    ;;
-    "all-default")
-      command_install_utils=1
-      command_install_web_tools=1
-      command_install_db=1
-      command_install_mobile_tools=1
-      option_web_server=apache2
-      option_php_version=5.6
-      option_db_server=mysql
-      option_db_user=root
-      option_db_pass=123456
-      break
     ;;
     "chrome")
       command_install_chrome=1
@@ -82,6 +71,10 @@ case $param in
     ;;
     "atom")
       command_install_atom=1
+      break
+    ;;
+    "ionic")
+      command_install_ionic=1
       break
     ;;
     --web-server=*)
@@ -137,7 +130,7 @@ if [[ "$option_db_server" != "mysql" ]] ; then
 fi
 ###########
 
-# check install utils command
+# check help command
 if [[ $command_show_help -gt 0 ]] ; then
   show_help
   exit
@@ -162,6 +155,11 @@ fi
 # check install database command
 if [[ $command_install_db -gt 0 ]] ; then
   install_database
+fi
+
+# check install ionic tools command
+if [[ $command_install_ionic -gt 0 ]] ; then
+  install_ionic
 fi
 
 #check install chrome command

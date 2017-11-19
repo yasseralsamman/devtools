@@ -19,19 +19,7 @@ $ sudo bash devtools.sh help
 ```
 
 ### Commands &amp; Options
-##### 1- Default Complete Installation
-This command will install everything that comes with Devtools, you can still override any available option from any command below.
-To start a complete installation use the command:
-```sh
-$ sudo bash devtools.sh all-default
-```
-This is equivalent to the following:
-```sh
-$ sudo bash devtools.sh utils web-tools db --web-server=apache2 --php-version=5.6 --db-server=mysql --db-pass=123456
-```
-This will install all the bundeled utilities, Apache2, Php5.6, Mysql with root password 123456.
-
-##### 2- Utilities
+##### 1- Utilities
 #
 DevTools comes bundeled with a bunch of useful utilities, like git, vim and other stuff. check ` src/utils.sh ` to see what is included.
 To install utilities use the command:
@@ -48,7 +36,7 @@ $ sudo bash devtools.sh utils --jdk-version=8
 $ sudo bash devtools.sh utils --nodejs-version=6
 ```
 
-##### 3- Web Development Tools
+##### 2- Web Development Tools
 #
 This command will help you install the web server and other related stuff like PHP, Composer and some other extensions.
 To install web tools use the command:
@@ -64,7 +52,7 @@ $ sudo bash devtools.sh web-tools --web-server=apache2
 ```sh
 $ sudo bash devtools.sh web-tools --php-version=5.6
 ```
-##### 4- Database Server
+##### 3- Database Server
 #
 This command will automatically install and configure the database server.
 ```sh
@@ -78,6 +66,12 @@ $ sudo bash devtools.sh db --db-server=mysql
 - You can chose the root password for your server:
 ```sh
 $ sudo bash devtools.sh db --db-pass=123456
+```
+##### 4- Mobile Tools
+###### Ionic Framework
+This command will install Cordova and Ionic Framework via npm globally. note that if you did not install JDK or NodeJS before, this command will automatically install them, so you can use `--jdk-version` and `--nodejs-version` options.
+```sh
+$ sudo bash devtools.sh ionic
 ```
 ##### 5- Optional Software installation
 The following commands are not included in default installation and you have to mention the command to install the software. Note that you can use multiple optional commands in one call.

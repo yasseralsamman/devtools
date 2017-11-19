@@ -29,6 +29,8 @@ function install_utils() {
   ln -s /usr/bin/nodejs /usr/bin/node &> /dev/null
   install_java
   install_nodejs
+  # Usefull less compiler for web developers
+  npm install -g less &> /dev/null & spinner "Installing Less"
 }
 
 function install_nodejs() {
