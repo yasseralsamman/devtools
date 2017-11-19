@@ -1,7 +1,7 @@
 # DevTools
 ###### Smart Bash Scripts For Web &amp; Mobile Development Tools | Ubuntu 14.04
 The most used web development tools in one place. Install dev tools after a fresh OS installation.
-###### ( Mobile Tools will be added soon )
+
 #
 ### Usage
 Download the script and move to the downloaded folder where `devtools.sh` is placed, then run the script:
