@@ -22,7 +22,7 @@ function install_web_tools() {
                   )
 
   apt-get -y install "${web_tools[@]/#/}" &> /dev/null & spinner "Installing Web Tools "
-  update-alternatives --set php /usr/bin/php${option_php_version}
+  update-alternatives --set php /usr/bin/php${option_php_version} &> /dev/null
   service apache2 restart &> /dev/null & spinner "Restarting Web Server "
 
   pear channel-discover pear.twig-project.org &> /dev/null & spinner "Discover PEAR channels"
@@ -31,11 +31,11 @@ function install_web_tools() {
   pear upgrade &> /dev/null & spinner "Upgrading PEAR Repo"
   pecl upgrade &> /dev/null & spinner "Upgrading PECL Library"
   pecl install uploadprogress &> /dev/null & spinner "Install Uploadprogress"
-  touch /etc/php/5.6/mods-available/uploadprogress.ini
+  touch /etc/php/${option_php_version}/mods-available/uploadprogress.ini
   echo -e "extension=uploadprogress.so " > /etc/php/5.6/mods-available/uploadprogress.ini
   php5enmod uploadprogress &> /dev/null & spinner "Enabling Uploadprogress"
   pear install twig/CTwig &> /dev/null & spinner "Installing Twig Ext"
-  touch /etc/php/5.6/mods-available/twig.ini
+  touch /etc/php/${option_php_version}/mods-available/twig.ini
   echo -e "extension=twig.so " > /etc/php/5.6/mods-available/twig.ini
   php5enmod twig &> /dev/null & spinner "Enabling Twig Ext"
   service apache2 restart &> /dev/null & spinner "Restarting Web Server"
