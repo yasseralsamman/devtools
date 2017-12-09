@@ -18,6 +18,7 @@ function install_web_tools() {
                     "php${option_php_version}-xmlrpc"
                     "php${option_php_version}-xml"
                     "php${option_php_version}-mbstring"
+                    "php${option_php_version}-zip"
                     "libapache2-mod-php${option_php_version}"
                   )
 
