@@ -13,6 +13,6 @@ function install_ionic() {
     install_nodejs
   fi
 
-  npm install -g cordova &> /dev/null & spinner "Installing Cordova"
-  npm install -g ionic &> /dev/null & spinner "Installing Ionic"
+  npm install -g cordova &>> log.txt & spinner "Installing Cordova"
+  npm install -g ionic &>> log.txt & spinner "Installing Ionic"
 }

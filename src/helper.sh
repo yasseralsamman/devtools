@@ -77,3 +77,9 @@ function spinner() {
   printf "    \b\b\b\b"
   printf "\t\t\t\t%s\n" " =============  Done."
 }
+
+# Preform cleaning for the system
+function clean() {
+  apt-get autoremove &>> log.txt & spinner "Removing unnecessary packages"
+  apt-get clean &>> log.txt & spinner "Clear package cache"
+}

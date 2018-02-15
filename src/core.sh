@@ -35,6 +35,10 @@ option_nodejs_version=6
 error_unknown_command=0
 error_unknown_command_msg=""
 
+# create log file or start log session
+crntdate=$(date "+%H:%M:%S %d/%m/%y")
+echo "==== devtools started at $crntdate" >> log.txt
+
 # check if no params are passed
 if [[ $# -lt 1 ]]; then
   show_help
@@ -171,6 +175,9 @@ fi
 if [[ $command_install_atom -gt 0 ]] ; then
   install_atom
 fi
+
+# clean environment before exit
+clean
 
 # display outro
 outro

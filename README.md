@@ -1,5 +1,5 @@
 # DevTools
-###### Smart Bash Scripts For Web &amp; Mobile Development Tools | Ubuntu 14.04
+###### Smart Bash Scripts For Web &amp; Mobile Development Tools | Ubuntu 16.04
 The most used web development tools in one place. Install dev tools after a fresh OS installation.
 
 #
