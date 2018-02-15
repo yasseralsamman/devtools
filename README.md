@@ -48,9 +48,9 @@ $ sudo bash devtools.sh web-tools
 ```sh
 $ sudo bash devtools.sh web-tools --web-server=apache2
 ```
-- You can chose what PHP version you want to install:
+- You can chose what PHP version you want to install (PHP 7.2 is default):
 ```sh
-$ sudo bash devtools.sh web-tools --php-version=5.6
+$ sudo bash devtools.sh web-tools --php-version=7.2
 ```
 ##### 3- Database Server
 #
@@ -89,4 +89,4 @@ $ sudo bash devtools.sh atom
 ```
 
 ### Contribution
-Every OS version will have it's own branch as the commands and installation instructions may differ from one to another, and it's easier for people to lcate their version from branch selection. Just remember to edit the readme to match your script.
+Every OS version will have it's own branch as the commands and installation instructions may differ from one to another, and it's easier for people to locate their version from branch selection. Just remember to edit the readme to match your script.
