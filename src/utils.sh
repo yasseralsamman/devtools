@@ -154,11 +154,11 @@ function install_java() {
   update_sources
   echo debconf shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections
   echo debconf shared/accepted-oracle-license-v1-1 seen true | sudo debconf-set-selections
-  apt-get -y install "${jversion}" &>> log.txt & spinner "Installing JDK${option_jdk_version}"
+  apt-get -y install "${jversion}" &>> log.txt & spinner "Installing Java JDK${option_jdk_version}"
 }
 
 function install_imagemagick() {
-  wget http://www.imagemagick.org/download/ImageMagick.tar.gz &>> log.txt & spinner "Downloading ImageMagick "
+  wget http://www.imagemagick.org/download/ImageMagick.tar.gz &>> log.txt & spinner "Download ImageMagick "
   tar xzvf ImageMagick.tar.gz &>> log.txt & spinner "Extracting ImageMagick "
   cd ImageMagick-7.0.*
   ./configure --with-rsvg=yes &>> log.txt & spinner "Configure ImageMagick "

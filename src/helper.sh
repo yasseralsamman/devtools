@@ -7,7 +7,7 @@ function show_help() {
 cat <<EOF
 
     DevTools - Smart Bash Scripts For Web & Mobile Development Tools
-    Version 1.0 for Ubuntu 14.04
+    Version 1.0 for Ubuntu 16.04
     Contribute at https://github.com/yasseralsamman/devtools
 
     Usage:
@@ -27,7 +27,7 @@ cat <<EOF
 
     Options:
       --web-server=NAME              Specify web server to install [default: "apache2"]
-      --php-version=VERSION          Specify php version to install [default: "5.6"]
+      --php-version=VERSION          Specify php version to install [default: "7.2"]
       --db-server=NAME               Specify database server to install [default: "mysql"]
       --db-pass=PASSWORD             Specify database root user password [default: "123456"]
       --jdk-version=VERSION          Specify JSDK version to install [default: "8"]
@@ -42,7 +42,7 @@ function intro() {
 cat <<EOF
 
   DevTools - Smart Bash Scripts For Web & Mobile Development Tools
-  Version 1.0 for Ubuntu 14.04
+  Version 1.0 for Ubuntu 16.04
   Contribute at https://github.com/yasseralsamman/devtools
 
 EOF
