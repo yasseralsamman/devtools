@@ -13,6 +13,7 @@ function install_ionic() {
     install_nodejs
   fi
 
+  sudo apt install gradle &>> log.txt & spinner "Installing Gradle"
   npm install -g cordova &>> log.txt & spinner "Installing Cordova"
   npm install -g ionic &>> log.txt & spinner "Installing Ionic"
 }
