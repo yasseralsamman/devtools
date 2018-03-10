@@ -53,6 +53,8 @@ function install_web_tools() {
   echo -e "extension=uploadprogress.so" > /etc/php/${option_php_version}/mods-available/uploadprogress.ini
   phpenmod uploadprogress &>> log.txt & spinner "Enabling Uploadprogress "
 
+  a2enmod rewrite &>> log.txt & spinner "Enabling Mod Rewrite"
+
   #Restart Apache2
   service apache2 restart &>> log.txt & spinner "Restarting Web Server"
 
